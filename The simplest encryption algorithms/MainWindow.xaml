@@ -1,0 +1,30 @@
+﻿<Window x:Class="TI1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TI1"
+        mc:Ignorable="d"
+        Title="Простые шифры" Height="691" Width="800">
+    <Grid Height="668" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="727*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="planeText" HorizontalAlignment="Left" Margin="10,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="377" Height="329" FontFamily="Candara" FontSize="16" Cursor="IBeam" Text="Введите текст..." PreviewTextInput="planeText_PreviewTextInput" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="resultText" HorizontalAlignment="Left" Margin="332,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="329" Width="385" Grid.Column="1" FontFamily="Candara" FontSize="16"><Run Language="ru-ru"/></TextBlock>
+        <Label Content="Исходный текст" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="377" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label Content="Результирующий текст" HorizontalAlignment="Left" Margin="332,31,0,0" VerticalAlignment="Top" Width="385" FontSize="16" Grid.Column="1"/>
+        <Label Content="Выберите вид шифра и введите ключ:" HorizontalAlignment="Left" Margin="10,489,0,0" VerticalAlignment="Top" Width="377" Height="29" Grid.ColumnSpan="2"/>
+        <RadioButton Content="Шифр методом поворачивающейся решетки (ключ - решетка)" HorizontalAlignment="Left" Margin="10,519,0,0" VerticalAlignment="Top" Width="377" Height="17" Checked="RadioButton_Checked" Grid.ColumnSpan="2"/>
+        <RadioButton Content="Шифр Вижинера с прогрессивным ключом (ключ - слово)" HorizontalAlignment="Left" Margin="10,542,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.827" Width="377" Height="17" Checked="RadioButton_Checked_1" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="wayOfInp" HorizontalAlignment="Left" Margin="347,519,0,0" VerticalAlignment="Top" Width="356" Height="25" Text="Выберите источник текста для зашифровки" Focusable="False" SelectedIndex="0" IsDropDownOpen="True" SelectionChanged="wayOfInp_SelectionChanged" Grid.Column="1">
+            <ComboBoxItem Content="Ввод с клавиатуры"/>
+            <ComboBoxItem Content="Ввод из файла"/>
+        </ComboBox>
+        <Button x:Name="BTNopenFile" Content="Выбрать файл..." HorizontalAlignment="Left" Margin="460,564,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.486" Width="130" Height="22" IsEnabled="False" Click="BTNopenFile_Click" Grid.Column="1" />
+        <TextBox x:Name="keyInp" HorizontalAlignment="Left" Margin="10,576,0,0" TextWrapping="Wrap" Text="Введите ключ..." VerticalAlignment="Top" Width="377" Height="21" IsEnabled="False" PreviewTextInput="keyInp_PreviewTextInput" Grid.ColumnSpan="2" TextChanged="keyInp_TextInput"/>
+        <Button x:Name="BTNcoding" Content="Зашифровать!" HorizontalAlignment="Left" Margin="61,413,0,0" VerticalAlignment="Top" Width="129"  IsEnabled="False" Click="BTNcoding_Click" Grid.Column="1"/>
+        <Button x:Name="BTNdecoding" Content="Дешифрировать!" HorizontalAlignment="Left" Margin="61,438,0,0" VerticalAlignment="Top" Width="129" IsEnabled="False" Click="BTNdecoding_Click" Grid.Column="1"/>
+    </Grid>
+</Window>
